@@ -7,85 +7,169 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Авторизация',
       theme: ThemeData(
-
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white70),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const HomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-
-      _counter++;
-    });
-  }
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      appBar: AppBar(
-
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Михайлов Денис Артемович:',
+        body: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(70.0),
+              child: Text('Авторизация', style: TextStyle(fontSize: 32, color: Colors.black87,
+                  fontWeight: FontWeight.w800),
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            Column(mainAxisAlignment: MainAxisAlignment.center, children:[
+
+              const Padding(
+                padding:EdgeInsets.all(10.0),
+                child:  SizedBox( width: 360,
+                  child: TextField( style: TextStyle(fontSize: 18, color: Color.fromRGBO(11, 107, 254, 1.0)
+                  ),
+                      decoration: InputDecoration(
+                        hintText: 'Логин',
+                        hintStyle: TextStyle(color: Colors.grey,),
+                        fillColor: Color.fromRGBO(240, 239, 244, 1.0),
+                        filled: true,
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                            borderSide: BorderSide.none
+                        ),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 18),
+                      )
+                  ),
+                ),
+              ),
+
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: SizedBox( width: 360,
+                  child: TextField(
+                    obscureText: true,
+                    style: TextStyle(fontSize: 18, color: Color.fromRGBO(11, 107, 254, 1.0)
+                    ),
+
+                    decoration: InputDecoration(
+                      hintText: 'Пароль',
+                      hintStyle: TextStyle(color: Colors.grey,),
+                      fillColor: Color.fromRGBO(240, 239, 244, 1.0),
+                      filled: true,
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                          borderSide: BorderSide.none
+                      ),
+                      contentPadding: EdgeInsets.symmetric(horizontal: 18),
+                    ),
+
+                  ),
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row( mainAxisAlignment: MainAxisAlignment.center,
+                    children:[
+                      SizedBox(
+                        height: 8, width: 50,
+                        child: Checkbox(
+                          fillColor: WidgetStateProperty.resolveWith((states) {
+                            if (states.contains(WidgetState.dragged)) {
+                              return Colors.grey;
+                            }
+                            return null;
+                          }),
+                          side: const BorderSide(color: Colors.grey, width: 1.7,),
+                          value: false,
+                          onChanged:(bool? value) {},
+                          checkColor: Colors.grey,
+
+                        ),
+                      ),
+                      const Text('Запомнить меня', style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      ),
+                    ]
+                ),
+              ),
+              const SizedBox(height: 10,),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  width: 360,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: const Color.fromRGBO(9, 96, 248, 1.0),
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: const Center(child: Text("Войти", style: TextStyle(fontSize: 18,
+                    color: Color.fromRGBO(228, 253, 255, 1.0),
+                    fontWeight: FontWeight.w700,
+                  ),
+                  ),
+                  ),
+
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  width: 360,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      width: 2,
+                      color: const Color.fromRGBO(9, 96, 248, 1.0),
+                    ),
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: const Center(child: Text("Регистрация",
+                    style: TextStyle(fontSize: 18,
+                      color: Color.fromRGBO(80, 139, 174, 1.0),
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  ),
+
+                ),
+              ),
+
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text('Восстановить пароль',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ]
+            ),
+            const SizedBox(height: 180,
             ),
           ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        )
+
     );
   }
 }
