@@ -1,4 +1,4 @@
-#Wed Sep 18 18:34:13 MSK 2024
+#Thu Sep 19 10:28:02 MSK 2024
 base.0=D\:\\flutterapps\\app1\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=D\:\\flutterapps\\app1\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=D\:\\flutterapps\\app1\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
