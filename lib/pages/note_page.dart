@@ -3,9 +3,16 @@ import '../models/note.dart';
 
 class ProductDetailPage extends StatelessWidget {
   final Sweet sweet;
+  final VoidCallback onDelete;
 
-  const ProductDetailPage({super.key, required this.sweet});
+  const ProductDetailPage({super.key, required this.sweet, required this.onDelete});
   final textFont = const TextStyle(fontSize: 20);
+
+  void _deleteProduct(BuildContext context) {
+    sweets.remove(sweet);
+    onDelete();
+    Navigator.pop(context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,6 +67,17 @@ class ProductDetailPage extends StatelessWidget {
               child: Text(
                 'Состав: ${sweet.ingredients}',
                 style: textFont,
+              ),
+            ),
+            const SizedBox(height: 20),
+            Center(
+              child: ElevatedButton.icon(
+                onPressed: () => _deleteProduct(context),
+                icon: const Icon(Icons.delete),
+                label: const Text('Удалить товар'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.red,
+                ),
               ),
             ),
           ],

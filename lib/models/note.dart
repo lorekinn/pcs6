@@ -110,3 +110,7 @@ List<Sweet> sweets = [
     ingredients: 'Какао, сахар, ваниль',
   ),
 ];
+
+void removeSweet(Sweet sweet) {
+  sweets.remove(sweet);
+}
