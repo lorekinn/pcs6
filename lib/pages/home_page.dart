@@ -93,7 +93,7 @@ class _HomePageState extends State<HomePage> {
             ElevatedButton(
               onPressed: () {
                 _addNewSweet();
-                Navigator.of(context).pop(); // Закрываем модальное окно
+                Navigator.of(context).pop();
               },
               child: const Text('Добавить'),
             ),
