@@ -1,20 +1,7 @@
-<<<<<<< HEAD
-# app1
+# ПКС 6. ЭФБО-06-22 Михайлов Денис
 
-A new Flutter project.
+Профиль
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-=======
-# pcs1
->>>>>>> fdc77a515eb182327499655cc0e291a9a3e87d04
+![image](https://github.com/user-attachments/assets/5cb7a2e4-11a3-4706-ba13-507c0819a099)
+![image](https://github.com/user-attachments/assets/d486deb3-e746-46a5-8582-7e8a3107bed4)
+![image](https://github.com/user-attachments/assets/a605474e-d2ea-45d4-be23-780d0f8080fe)
